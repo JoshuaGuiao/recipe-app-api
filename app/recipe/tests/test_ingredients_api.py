@@ -21,7 +21,7 @@ def detail_url(ingredient_id):
     return reverse('recipe:ingredient-detail', args=[ingredient_id])
 
 
-def create_user(email='user@ecample.com', password='testpass123'):
+def create_user(email='user@example.com', password='testpass123'):
     """Create and return user."""
     return get_user_model().objects.create_user(email=email, password=password)
 
@@ -86,7 +86,7 @@ class PrivateIngredientsApiTests(TestCase):
 
     def test_delete_ingredient(self):
         """Test deleting an ingredient"""
-        ingredient = Ingredient.objects.create(user=self.user, name='Celery')
+        ingredient = Ingredient.objects.create(user=self.user, name='Lettuce')
 
         url = detail_url(ingredient.id)
         res = self.client.delete(url)
